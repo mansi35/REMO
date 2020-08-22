@@ -1,0 +1,444 @@
+@font-face {
+  font-family: "Gilroy";
+  src: url("Gilroy-ExtraBold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Gilroy-light";
+  src: url("Gilroy-Light.otf") format("opentype");
+}
+
+body {
+  padding: 0;
+  padding-top: 10px;
+  margin: 0;
+  background-color: #12163b;
+}
+
+body *::-moz-selection {
+  background-color: #d400ff;
+}
+
+body *::selection {
+  background-color: #d400ff;
+}
+
+body * {
+  color: white;
+  font-family: Gilroy-light, Arial, sans-serif;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+body h1,
+body h2,
+body h3,
+body .btn {
+  font-family: Gilroy, Arial, sans-serif;
+}
+
+body .btn {
+  color: white;
+  border: none;
+  outline: none;
+}
+
+body .btn:focus, body .btn:active {
+  outline: none !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  border: none !important;
+}
+
+body .containers {
+  min-height: 80vh;
+}
+
+body #wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+body #wrapper #content {
+  position: relative;
+  z-index: 100;
+}
+
+body #wrapper #background {
+  z-index: -100;
+}
+
+body h1 {
+  font-size: 2rem;
+}
+
+body form {
+  position: relative;
+  overflow: hidden;
+}
+
+body form h6 {
+  letter-spacing: 0.1rem;
+}
+
+body form .input-area {
+  margin-bottom: 40px;
+  position: relative;
+}
+
+body form .input-area.button-area {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+body form input,
+body form textarea {
+  height: 100%;
+  letter-spacing: 0.1rem;
+  padding: 20px;
+  display: block;
+  width: 100% !important;
+  text-transform: none !important;
+  border: none;
+  background-color: #0b132e;
+  color: white;
+  position: relative;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  outline: none;
+}
+
+body form input:focus + .label-name::after,
+body form textarea:focus + .label-name::after {
+  visibility: visible;
+}
+
+body form label {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+body form label::after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  bottom: -1px;
+  height: 1px;
+  background: -webkit-gradient(linear, left top, right top, from(#f441a5), to(#03a9f4));
+  background: linear-gradient(90deg, #f441a5, #03a9f4);
+  width: 100%;
+  visibility: hidden;
+  -webkit-transform: visibility;
+          transform: visibility;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+
+body form .submit-btn {
+  padding: 0 20px;
+  height: 50px;
+  width: 50%;
+  text-align: center;
+  line-height: 50px;
+  color: white;
+  font-size: 0.85rem;
+  letter-spacing: 0.25rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  outline: none;
+  border: 2px solid white !important;
+}
+
+body form .submit-btn:active {
+  outline: none;
+  border: 2px solid white !important;
+}
+
+body form .submit-btn:hover {
+  color: white;
+}
+
+body form .close {
+  margin: 5px;
+}
+
+@-webkit-keyframes show-tick {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100;
+  }
+}
+
+@keyframes show-tick {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100;
+  }
+}
+
+body .tick-svg {
+  fill: greenyellow !important;
+  -webkit-animation: show-tick ease 1s;
+          animation: show-tick ease 1s;
+}
+
+body #nav-menu .btn {
+  font-size: 1.1rem;
+  letter-spacing: 0.1rem;
+  display: block;
+  font-weight: 700;
+}
+
+body #nav-menu .btn:hover {
+  color: #760dff;
+}
+
+body #nav-menu .active-btn {
+  color: #760dff;
+  font-weight: 700;
+}
+
+body #home-section h1 {
+  font-size: 3rem;
+}
+
+body #home-section .buttons {
+  width: 10rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.1rem;
+  font-weight: 700;
+  padding: 10px;
+  text-transform: uppercase;
+}
+
+body #home-section #join-btn {
+  background-color: #d400ff;
+}
+
+body #home-section #join-btn:hover, body #home-section #join-btn:active {
+  color: white;
+}
+
+body #home-section #schedule-btn {
+  background-color: #760dff;
+}
+
+body #about-section .icons {
+  font-size: 20vh;
+}
+
+body #team-section :root {
+  --d: 700ms;
+  --e: cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+body #team-section h1 {
+  font-size: 2rem;
+}
+
+body #team-section h2 {
+  font-family: Gilroy-light, Arial, sans-serif;
+  margin: 1rem;
+}
+
+body #team-section p {
+  font-size: 1rem;
+}
+
+body #team-section * {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body #team-section .hidden {
+  opacity: 0;
+}
+
+body #team-section .console-container {
+  font-size: 3vw;
+  text-align: center;
+  display: block;
+  color: white;
+}
+
+@media screen and (max-width: 600px) {
+  body #team-section .console-container {
+    font-size: 2.7em;
+  }
+}
+
+body #team-section .console-underscore {
+  display: inline-block;
+  position: relative;
+  top: -0.14em;
+  left: 10px;
+}
+
+body #team-section .card-img {
+  width: 100%;
+  height: 70vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media screen and (max-width: 600px) {
+  body #team-section .card-img {
+    width: 70vw;
+    height: 60vh;
+  }
+  body #team-section .card {
+    border: none;
+    width: 75vw;
+  }
+}
+
+body #team-section .card {
+  border: none;
+}
+
+body #team-section .img__wrap {
+  position: relative;
+}
+
+body #team-section .content {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: opacity .5s, visibility .5s;
+  transition: opacity .5s, visibility .5s;
+  z-index: 1;
+}
+
+body #team-section .c {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: #fff;
+}
+
+body #team-section .img__wrap:hover .content {
+  visibility: visible;
+  opacity: 1;
+}
+
+body #team-section .copy {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transition: .5s;
+  transition: .5s;
+  -webkit-transform: translateY(1em);
+          transform: translateY(1em);
+}
+
+body #team-section .img__wrap:hover .copy {
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+body #team-section .copy {
+  position: absolute;
+  bottom: 0;
+}
+
+body #team-section .profile {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: .5s;
+  transition: .5s;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  z-index: 2;
+}
+
+body #team-section .img__wrap:hover .profile {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transform: translateY(-1em);
+          transform: translateY(-1em);
+}
+
+body #team-section .title {
+  z-index: 1000;
+}
+
+body #team-section svg {
+  margin: 10px;
+  fill: white;
+}
+
+body #contact-section h3 {
+  margin-bottom: 30px;
+  font-size: 2rem;
+}
+
+body #contact-section form .input-area {
+  margin-bottom: 15px;
+}
+
+body #contact-section form .submit-btn {
+  margin-top: 20px;
+  border: 2px solid white !important;
+}
+
+body #contact-section form .submit-btn:active {
+  border: 2px solid white !important;
+}
+
+body #contact-section #footer {
+  position: relative;
+  top: 15vh;
+}
+
+body #contact-section #footer p {
+  text-transform: none;
+  letter-spacing: 0.1rem;
+}
+
+body #contact-section svg {
+  margin: 10px;
+  fill: white;
+}
+
+body .modal-content {
+  background-color: #12163b;
+}
+
+body .modal-content .modal-title {
+  padding: 20px;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-transition: background-color 5000s ease-in-out, color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out, color 5000s ease-in-out 0s;
+}
+/*# sourceMappingURL=index.css.map */

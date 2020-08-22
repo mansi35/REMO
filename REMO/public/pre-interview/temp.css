@@ -1,0 +1,31 @@
+body {
+  background-color: #12163b;
+  padding: 0;
+  padding-top: 10px;
+  margin: 0;
+}
+
+body * {
+  color: white;
+  font-family: 'Roboto', sans-serif;
+}
+
+body p {
+  font-weight: 700;
+}
+
+body .active {
+  color: #760dff;
+}
+
+body .nav-menu div button {
+  background-color: #12163b;
+  border: none;
+  padding: 5px;
+}
+
+body .nav-menu div button:active {
+  border: none;
+  outline: none;
+}
+/*# sourceMappingURL=temp.css.map */

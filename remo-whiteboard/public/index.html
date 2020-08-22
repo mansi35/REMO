@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Collobarative whiteboard</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/addons/p5.dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+    <style>
+        body {
+            margin: 0 0;
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css" integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="sidebar">
+        <ul>
+            <li>
+                <label for="red"></label>
+                <button id="red" onclick="changered()" style="background-color: red; height: 60px; width: 60px; margin: 10px 10px;"></button>
+            </li>
+            <li>
+                <label for="blue"></label>
+                <button id="blue" onclick="changeblue()" style="background-color: blue; height: 60px; width: 60px; margin: 10px 10px;"></button>
+            </li>
+            <li>
+                <label for="black"></label>
+                <button id="black" onclick="changeblack()" style="background-color: black; height: 60px; width: 60px; margin: 10px 10px;"></button>
+            </li>
+            <li>
+                <button id="eraser" onclick="Erase()"><i class="fas fa-eraser fa-3x" aria-hidden="true" style="margin: 10px 0; border-color: transparent;"></i></button>
+            </li>
+            <li>
+                <label for="weight" style="color: #000000; font-size: larger ;margin: 10px 10px;">Stroke:</label>
+                <input type="number" id="weight" min="2" max="200" value="3" style="margin: 10px 10px;" />
+            </li>
+            <li>
+                <button id="clear" onclick="resetSketch()"><i class="fa fa-trash fa-3x"></i></button>
+            </li>
+        </ul>
+    </div>
+    <script src="sketch.js"></script>
+</body>
+
+</html>

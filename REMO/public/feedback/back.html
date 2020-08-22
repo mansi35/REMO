@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="./temp.css">
+    <link href="../banner/style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase.js"></script>
+</head>
+<style>
+input[type=text],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid rgb(70, 68, 68);
+            border-radius: 4px;
+            resize: vertical;
+	    color: black;
+        }
+        
+        label {
+            padding: 12px 12px 12px 0;
+            display: inline-block;
+        }
+        
+        #subject {
+            width: 500px;
+            height: 250px;
+            resize: none;
+            text-align: center;
+            display: block;
+            margin-left: 10px;
+            margin-right: auto;
+        }
+        
+        .container {
+            border-radius: 10px;
+      
+            margin-right: auto;
+            margin-left: auto;
+            width: 600px;
+            height: 440px;
+            padding: 10px 10px 10px 10px;
+        }
+        
+        
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        
+        *:before,
+        *:after {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        pre {
+            display: block;
+            padding: 9.5px;
+            margin: 0 0 10px;
+            font-size: 13px;
+            line-height: 1.42857143;
+            color: #333;
+            word-break: break-all;
+            word-wrap: break-word;
+            background-color: #F5F5F5;
+            border: 1px solid #CCC;
+            border-radius: 4px;
+        }
+        
+        .header {
+            padding: 20px 0;
+            position: relative;
+            margin-bottom: 10px;
+        }
+        
+        .header:after {
+            content: "";
+            display: block;
+            height: 1px;
+            background: #eee;
+            position: absolute;
+            left: 30%;
+            right: 30%;
+        }
+        
+        .header h1 {
+            font-size: 3em;
+            font-weight: 300;
+            margin-bottom: 0.2em;
+        }
+        
+        .header p {
+            font-size: 14px;
+        }
+        /* Rating Star Widgets Style */
+        
+        .rating-stars ul {
+            list-style-type: none;
+            padding: 0;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+        }
+        
+        .rating-stars ul>li.star {
+            display: inline-block;
+        }
+   
+        
+        .rating-stars ul>li.star>i.fa {
+            font-size: 4.5em;
+            /* Change the size of the stars */
+            color: #ccc;
+            /* Color on idle state */
+        }
+        /* Hover state of the stars */
+        
+        .rating-stars ul>li.star.hover>i.fa {
+            color: #FFCC36;
+        }
+        /* Selected state of the stars */
+        
+        .rating-stars ul>li.star.selected>i.fa {
+            color: #FFCC36;
+        }
+        
+        #comments {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .button {
+            background-color: #DCDCDC;
+            border: 2px solid #020353;
+            color: black;
+            padding: 0.5em 0.5em;
+            text-align: center;
+            text-decoration: none;
+            font-size: 1em;
+            display: block;
+            width: 40%;
+            border-radius: 5px;
+            box-shadow: 3px 3px 8px 0 #000;
+            margin: auto;
+        }
+        
+        .button:hover {
+            color: white;
+            background-color: gray;
+        }
+</style>
+
+<body>
+    <div id="particles-js" style="position: absolute; right: 0; bottom: 0; width: 100%; top: 0; height: 100vh;"></div>
+    <section id="----ur section name----">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-2 text-center">
+                    <img src="../assets/remotitle.png" width="150">
+                </div>            
+            </div>
+                <div class="col-md-10 text-center my-auto container">
+                    <form onsubmit="sConsole(event)">
+            <section class='rating-widget'>
+                <h1 style="text-align: center; color: white;">Rate your experience</h1>
+                <div class='rating-stars text-center'>
+                    <ul id='stars'>
+                        <li class='star' title='Needs improvement' data-value='1'>
+                            <i class='fa fa-star fa-fw'></i>
+                        </li>
+                        <li class='star' title='Satisfactory' data-value='2'>
+                            <i class='fa fa-star fa-fw'></i>
+                        </li>
+                        <li class='star' title='Fair' data-value='3'>
+                            <i class='fa fa-star fa-fw'></i>
+                        </li>
+                        <li class='star' title='Good' data-value='4'>
+                            <i class='fa fa-star fa-fw'></i>
+                        </li>
+                        <li class='star' title='Excellent' data-value='5'>
+                            <i class='fa fa-star fa-fw'></i>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <div class="container">
+                <form>
+                    <div class="row">
+                        <label for="feed_back" id="comments"><h3>Any suggestions/comments<h3></label>
+                    
+                        <textarea id="subject" name="subject" rows="20" cols="10"></textarea>
+                    </div>
+                    <div>
+                        <br>
+                        <a type="submit" class="button" href="../index.html">Submit & Return to Home page</a>
+                    </div>
+                </form>
+            </div>         
+                </div>
+            </div> 
+        </div>
+    </section>
+   
+    <script type="text/javascript" src="../banner/particles.js"></script>
+    <script type="text/javascript" src="../banner/app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+<script>
+        var firebaseConfig = {
+            apiKey: "AIzaSyDkaU5im4Hj7QsqQDFVkM3_kKyF1YGQI4Q",
+            authDomain: "remo-e30b0.firebaseapp.com",
+            databaseURL: "https://remo-e30b0.firebaseio.com",
+            projectId: "remo-e30b0",
+            storageBucket: "remo-e30b0.appspot.com",
+            messagingSenderId: "318553256084",
+            appId: "1:318553256084:web:955bfc1a10af2b009d4481"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+        var database = firebase.database();
+        var feedback = database.ref().child('Feedback');
+        var st;
+
+        $(document).ready(function() {
+
+            /* 1. Visualizing things on Hover - See next part for action on click */
+            $('#stars li').on('mouseover', function() {
+                var onStar = parseInt($(this).data('value'), 10); // The star currently mouse on
+
+                // Now highlight all the stars that's not after the current hovered star
+                $(this).parent().children('li.star').each(function(e) {
+                    if (e < onStar) {
+                        $(this).addClass('hover');
+                    } else {
+                        $(this).removeClass('hover');
+                    }
+                });
+
+            }).on('mouseout', function() {
+                $(this).parent().children('li.star').each(function(e) {
+                    $(this).removeClass('hover');
+                });
+            });
+
+
+            /* 2. Action to perform on click */
+            $('#stars li').on('click', function() {
+                var onStar = parseInt($(this).data('value'), 10); // The star currently selected
+                var stars = $(this).parent().children('li.star');
+
+                for (i = 0; i < stars.length; i++) {
+                    $(stars[i]).removeClass('selected');
+                }
+
+                for (i = 0; i < onStar; i++) {
+                    $(stars[i]).addClass('selected');
+                }
+
+                // JUST RESPONSE (Not needed)
+                var ratingValue = parseInt($('#stars li.selected').last().data('value'), 10);
+                var msg = "";
+                if (ratingValue > 1) {
+                    msg = ratingValue;
+                } else {
+                    msg = ratingValue;
+                }
+                st = responseMessage(msg);
+
+            });
+
+
+        });
+
+        function responseMessage(msg) {
+            return msg;
+        }
+        function sConsole(event) {
+            event.preventDefault();
+            var d = document.getElementById("subject");
+            var comments = d.value;
+            var details = {
+                Rating: st,
+                Comments: comments,
+            };
+            feedback.push(details);
+
+        }
+    </script>
+
+</body>
+
+</html>

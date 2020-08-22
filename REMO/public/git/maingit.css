@@ -1,0 +1,145 @@
+.fileBtn{
+    background: none;
+    color: #47bfff;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    font-size: 20px;
+}
+
+.fileBtn:hover{
+    color: #218bc4;
+}
+
+.fileBtn:active{
+    border: none;
+    outline: none;
+}
+
+body{
+    font-family: arial;
+}
+
+#divResultPath button{
+    background: none;
+    color: #47bfff;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    font-size: 20px;
+}
+
+#divResultPath button:hover{
+    color: #218bc4;
+}
+
+hr{
+    height: 1px;
+    color:black;
+}
+
+.activity {
+    /* background-color: blue; */
+    display: inline-block;
+    /* padding-top: 20px; */
+}
+
+.activity::after{
+    content: "";
+    display: block;
+    height: 20px;
+    width: 15px;
+    border-right: 2px solid black;
+}
+
+.svg-icon-activity{
+    border: 1px solid black;
+    border-radius: 100%;
+    display: inline-block;
+    padding: 5px;    
+}
+
+.btn{
+    background-color: black;
+    box-shadow: none;
+}
+.btn:hover{
+    background-color: black;
+}
+
+#github-toggle button{
+    background-color: white;
+    border: none;
+    outline: none;
+    font-size: 23px;
+    /* border-bottom: 2px solid white; */
+}
+
+#github-toggle button:hover{
+    border-bottom: 2px solid black;    
+}
+
+.underline {
+    border-bottom: 2px solid black !important;
+}
+
+.search-field {
+    margin: 0;
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: auto;
+    align-self: center;
+    height: 51px;
+    width: 30%;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+  
+.search-submit {
+    height: 51px;
+    margin: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+    font-family: "Font Awesome 5 Free";
+    font-size: 1rem;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    display: inline-block;
+    font-weight: 600;
+    font-size: 0.8rem;
+    line-height: 1.15;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    background: #47bfff;
+    color: #292826;
+    border: 1px solid transparent;
+    vertical-align: middle;
+    text-shadow: none;
+    outline: none;
+}
+
+
+.search-form {
+    display: flex;
+    justify-content: center;
+}
+
+.search-field {
+    -webkit-appearance: none !important;
+    background-clip: padding-box;
+    background-color: white;
+    vertical-align: middle;
+    border-radius: 0.25rem;
+    border: 1px solid #e0e0e5;
+    font-size: 1rem;
+    width: 100%;
+    line-height: 2;
+    padding: 0.375rem 1.25rem;
+  }

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>REMO</title>
+    <!-- <base href="/"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css" integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/7.15.5/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/7.15.5/firebase-firestore.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+    <!--github style sheet-->
+    <link rel="stylesheet" href="../git/maingit.css">
+    <!--video styles-->
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <style>
+        .bs-example {
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidebar">
+        <a href="#" onclick="openvideo()" data-toggle="tooltip" data-placement="right" title="Dashboard"><i class="fas fa-desktop fa-lg"></i></a>
+        <a href="#" onclick="openboard()" data-toggle="tooltip" data-placement="right" title="White Board"><i class="fas fa-file-signature fa-lg"></i></a>
+        <a href="#" onclick="opengit()" data-toggle="tooltip" data-placement="right" title="GitHub"><i class="fab fa-github fa-2x"></i></a>
+        <a href="#" onclick="openlab()" data-toggle="tooltip" data-placement="right" title="Codelab"><i class="fas fa-laptop-code fa-lg"></i></a>
+        <a href="#" onclick="openchat()" data-toggle="tooltip" data-placement="right" title="Chat"><i class="fas fa-comment fa-lg"></i></a>
+        <a href="#" onclick="opensettings()" data-toggle="tooltip" data-placement="right" title="Settings"><i class="fas fa-sliders-h fa-lg"></i></a>
+    </div>
+    <!--sidebar end-->
+
+    <div class="content">
+        <div class="row">
+            <div class="col-md-12 video" id="videoDIV">
+                <div class="video">
+                    <div>
+                        <span id="currentRoom"></span>
+                    </div>
+                    <div id="videos">
+                        <video id="remoteVideo" autoplay playsinline style="height: 100vh;"></video>
+                        <video id="localVideo" muted autoplay playsinline></video>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 d-none" id="gitDIV" style="height: 100vh;padding: 20px;">
+                <div id="form" class="text-center my-auto search-form mx-auto" style="width: 30%;">
+                    <input type="text" id="username" placeholder="GitHub username" class="search-field">
+                    <input type="submit" value="&#xf002" class="search-submit" id="btnUser"/>
+                </div>
+                <div class="container-fluid" style="padding: 20px;">
+                    <div class="row">
+                        <div id="divResultUser" class="col-md-4"></div>
+                        <div class="col-md-8 my-auto">
+                            <div id="github-toggle">
+                                <button id="reposBtn" class="underline">Repos</button>
+                                <button id="activityBtn">Activity</button>
+                            </div>
+                            <hr/>
+                            <div style="overflow-y: scroll;overflow-x: hidden; height:74vh;">
+                                <div id="reposBox">
+                                    <p id="divResultPath"></p>
+                                    <div id="divResult"></div>
+                                </div>
+                                <div id="activityBox" class="d-none">
+                                    <div id="activityRes"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 d-none" id="boardDIV" style="max-height: 100vh;">
+                <div class="container-fluid" style="height: 100vh;">
+                    <embed src="https://removirtual-board.herokuapp.com/" id="board" style="width:100%; height:100vh;"/>
+                        <!--<iframe scrolling="no" style="border: none;" id="board" width="100%" height="100%" src="https://removirtual-board.herokuapp.com/"></iframe>-->
+                </div>
+            </div>
+            <div class="col-md-12 d-none" id="chatDIV" style="max-height: 100vh;">
+                <div class="container-fluid" style="height: 100vh;">
+                    <embed src="https://chat-at-remo.herokuapp.com/" id="chat" style="width:100%; height:100vh;"/>
+                </div>
+            </div>
+            <div class="col-md-12 d-none" id="labDIV" style="height: 100%;">
+                <iframe contenteditable="true" allow-same-origin style="border: none;" id="lab" width="100%" height="100%"></iframe>
+            </div>
+        </div>
+
+        <div class="footer row " id="setting">
+            <div class="col-md-4 my-auto">
+                <button disabled id="toggleCamera">
+                <i id="toggleCameraIcon" class="fa fa-video-camera" aria-hidden="true"></i>
+            </button>
+            </div>
+            <div class="col-md-4 my-auto">
+                <button disabled id="toggleMic">
+                <i id="toggleMicIcon" class="fa fa-microphone" aria-hidden="true"></i>
+            </button>
+            </div>
+            <div class="col-md-4" style="background-color: red;">
+                <button disabled id="hangupBtn">
+                <i class="material-icons mdc-button__icon mt-3" aria-hidden="true">call_end</i>
+                <span class="mdc-button__label"></span>
+            </button>
+            </div>
+        </div>
+
+
+        <div class="bs-example">
+            <!-- Modal HTML -->
+            <div id="myModal" class="modal fade">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Important Instructions</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p> You would be entering the full screen mode for this meeting.</p>
+                            <p class="text-warning"><small>If you don't agree to go full screen, you can't continue using the meeting features.</small></p>
+                            <p class="text-info"><small><strong>Note:</strong> Whenever you try exiting the fullscreen mode in-between the meeting, the interviewer would be notified. You will only be exiting the full screen mode after your interview is finished.</small></p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" onclick="openFullscreen()" data-dismiss="modal">Go Fullscreen</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bs-example">
+            <!-- Modal HTML -->
+            <div id="warning" class="modal fade">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Warning</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p> You have exited the full screen mode.</p>
+                            <p class="text-info"><small><strong>Note:</strong> Whenever you try exiting the fullscreen mode in-between the meeting, the interviewer would be notified</small></p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" onclick="openFullscreen()" data-dismiss="modal">Go Fullscreen</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--script for videos-->
+        <script src="navigation.js"></script>
+        <!--script for the side menu-->
+        <script src="../git/main.js"></script>
+
+        <!--script for videos-->
+        <script src="navigation.js"></script>
+        <!--script for the side menu-->
+        <script src="../git/main.js"></script>
+        <!--script for github-->
+        <script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="laby.js"></script>
+        <script defer src="app.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+        <script src="https://unpkg.com/material-components-web@0.36.1/dist/material-components-web.min.js"></script>
+        <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+        <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> -->
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+        <script type="text/javascript">
+            window.mdc.autoInit();
+        </script>
+        <script>
+            $(document).ready(function() {
+                $('[data-toggle="tooltip"]').tooltip();
+            });
+        </script>
+</body>
+
+</html>

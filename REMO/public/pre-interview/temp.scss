@@ -1,0 +1,36 @@
+$background-color: #12163b;
+$blue-color: #760dff;
+
+body{
+    background-color: $background-color;
+    padding: 0;
+    padding-top: 10px;
+    margin: 0;
+    *{
+        color: white;
+        font-family: 'Roboto', sans-serif;
+    }
+    p{
+        font-weight: 700;
+    }
+    .active{
+        color: $blue-color;
+    }
+    .nav-menu{
+        div{
+            button{
+                background-color: $background-color;
+                border: none;
+                padding: 5px;
+                &:active{
+                    border: none;
+                    outline: none;
+                }
+            }
+        }
+    }
+    
+}
+
+
+

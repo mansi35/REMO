@@ -1,4 +1,4 @@
-# ![Image](/public/assets/remotitle.png)
+# ![Image](/REMO/public/assets/remotitle.png)
 An interface to improve video interview experience.. 
 
 # Description

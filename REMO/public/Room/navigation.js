@@ -111,16 +111,8 @@ function dragElement(elmnt) {
       pos2 = pos4 - e.clientY;
       pos3 = e.clientX;
       pos4 = e.clientY;
-      var py =  (elmnt.offsetTop - pos2);
-      var px =  (elmnt.offsetLeft - pos1);
-      var height = window.innerHeight;
-      var width = window.innerWidth;
-      var offset = -200;
-      if(px >= 0 + offset && px <= width + offset){
-        elmnt.style.left = px + "px"
-      }if(py >= 0 && py <= height){
-        elmnt.style.top = py + "px"
-      }
+      elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+      elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
     }
   
     function closeDragElement() {

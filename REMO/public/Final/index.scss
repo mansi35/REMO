@@ -200,145 +200,207 @@ body {
     }
     #about-section {
         .icons {
-            font-size: 20vh;
-        }
-    }
-    #team-section {
-         :root {
-            --d: 700ms;
-            --e: cubic-bezier(0.19, 1, 0.22, 1);
-        }
-        h1 {
-            font-size: 2rem;
-        }
-        h2 {
-            font-family: Gilroy-light, Arial, sans-serif;
-            margin: 1rem;
+            font-size: 5vh;
         }
         p {
             font-size: 1rem;
         }
+        h3 {
+            font-size: 1.5rem;
+        }
+        .feat {
+            padding-top: 20px !important;
+            padding-bottom: 20px !important;
+        }
+    }
+    #team-section {
         * {
             box-sizing: border-box;
         }
-        .hidden {
-            opacity: 0;
+        body {
+            font-size: 100%;
+            // background: #fff;
+            // font-family: 'Open Sans', sans-serif;
+            line-height: 1.42857143;
+            // color: #333;
         }
-        .console-container {
-            font-size: 3vw;
+        .team {
+            padding: 0;
+        }
+        .container {
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+        @media (min-width: 768px) {
+            .container {
+                width: 750px;
+            }
+        }
+        @media (min-width: 992px) {
+            .container {
+                width: 970px;
+            }
+        }
+        @media (min-width: 1200px) {
+            .container {
+                width: 1170px;
+            }
+        }
+        .team-grid {
             text-align: center;
-            display: block;
-            color: $primary-color;
         }
-        @media screen and (max-width: 600px) {
-            .console-container {
-                font-size: 2.7em;
-            }
+        .col-xs-4 {
+            width: 33.33333333%;
+            float: left;
+            position: relative;
+            min-height: 1px;
+            padding-right: 15px;
+            padding-left: 15px;
         }
-        .console-underscore {
+        /*-- Team --*/
+        .team {
+            padding-top: 1em;
+        }
+        .team-grid {
+            text-align: center;
+        }
+        .team-grid h4 {
+            font-size: 25px;
+            font-weight: 600;
+            margin: 40px 0 20px;
+        }
+        .team-grid p {
+            color: #777;
+            font-size: 1em;
+        }
+        h4 {
+            text-align: center;
+        }
+        .social-nav li {
             display: inline-block;
+        }
+        .social-nav a {
+            position: absolute;
+            left: -30%;
+            // right: 0;
+            display: inline-block;
+            // float: left;
+            width: 40px;
+            height: 40px;
+            margin: 0 10px;
+            text-decoration: none;
+            cursor: pointer;
+            text-align: center;
+            line-height: 40px;
+            background: #000;
             position: relative;
-            top: -0.14em;
-            left: 10px;
+            -webkit-transition: 0.5s;
+            -moz-transition: 0.5s;
+            -o-transition: 0.5s;
+            transition: 0.5s;
         }
-        .card-img {
-            width: 100%;
-            height: 70vh;
-            object-fit: cover;
+        .model-3d-0 a {
+            background: #5C5B5B;
+            -webkit-transform-style: preserve-3d;
+            -moz-transform-style: preserve-3d;
+            -ms-transform-style: preserve-3d;
+            -o-transform-style: preserve-3d;
+            transform-style: preserve-3d;
         }
-        @media screen and (max-width: 600px) {
-            .card-img {
-                width: 70vw;
-                height: 60vh;
-            }
-            .card {
-                border: none;
-                width: 75vw;
-                //margin-bottom: 2.5em;
-            }
-        }
-        .card {
-            border: none;
-            // width: 30vw !important;
-        }
-        .img__wrap {
-            position: relative;
-        }
-        .content {
+        .model-3d-0 .front,
+        .model-3d-0 .back {
+            width: 40px;
+            height: 40px;
+            font-size: 1em;
+            color: #fff;
+            background: #111b57;
             position: absolute;
             top: 0;
-            bottom: 0;
             left: 0;
             right: 0;
-            background: rgba(0, 0, 0, 0.6);
+            -webkit-transform: translateZ(18px);
+            -moz-transform: translateZ(18px);
+            -ms-transform: translateZ(18px);
+            -o-transform: translateZ(18px);
+            transform: translateZ(18px);
+            -webkit-backface-visibility: visible;
+            -moz-backface-visibility: visible;
+            -ms-backface-visibility: visible;
+            -o-backface-visibility: visible;
+            backface-visibility: visible;
+        }
+        .model-3d-0 .back {
+            font-size: 1em;
             color: #fff;
-            visibility: hidden;
-            opacity: 0;
-            transition: opacity .5s, visibility .5s;
+            -webkit-transform: rotateX(90deg) translateZ(18px);
+            -moz-transform: rotateX(90deg) translateZ(18px);
+            -ms-transform: rotateX(90deg) translateZ(18px);
+            -o-transform: rotateX(90deg) translateZ(18px);
+            transform: rotateX(90deg) translateZ(18px);
+            -webkit-backface-visibility: hidden;
+            -moz-backface-visibility: hidden;
+            -ms-backface-visibility: hidden;
+            -o-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+        .twitter .back,
+        .facebook .back,
+        .instagram .back,
+        .pinterest .back {
+            background: #81cdfa;
+        }
+        .model-3d-0 a:hover {
+            -webkit-transform: rotateX(-90deg);
+            -moz-transform: rotateX(-90deg);
+            -ms-transform: rotateX(-90deg);
+            -o-transform: rotateX(-90deg);
+            transform: rotateX(-90deg);
+        }
+        .model-3d-0 a:hover .back {
+            -webkit-backface-visibility: visible;
+            -moz-backface-visibility: visible;
+            -ms-backface-visibility: visible;
+            -o-backface-visibility: visible;
+            backface-visibility: visible;
+        }
+        .stack img {
+            height: 47vh;
+            width: 100%;
+            object-fit: cover;
+            vertical-align: bottom;
+            border: 3px solid #fff;
+            border-radius: 3px;
+            -webkit-border-radius: 3px;
+            -o-border-radius: 3px;
+            -ms-border-radius: 3px;
+            -moz-border-radius: 3px;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            -o-box-sizing: border-box;
+            -ms-box-sizing: border-box;
+            -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+            -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+            -o-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+            -ms-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+        }
+        .stack:last-of-type {
+            margin-right: 0;
+        }
+        /* Stacks creted by the use of generated content */
+        // 
+        /* 2nd element in stack (behind image) */
+        .stack {
+            float: none;
+            width: 92%;
+            margin: 3% 0% 8% 4%;
+            position: relative;
             z-index: 1;
         }
-        .c {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            color: #fff;
-        }
-        .img__wrap:hover .content {
-            visibility: visible;
-            opacity: 1;
-        }
-        .copy {
-            visibility: visible;
-            opacity: 1;
-            transition: .5s;
-            transform: translateY(1em);
-        }
-        .img__wrap:hover .copy {
-            visibility: hidden;
-            opacity: 0;
-            transform: translateY(0);
-        }
-        .copy {
-            position: absolute;
-            bottom: 0;
-        }
-        .profile {
-            position: absolute;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            visibility: hidden;
-            opacity: 0;
-            transition: .5s;
-            transform: translateY(0);
-            z-index: 2;
-        }
-        .img__wrap:hover .profile {
-            visibility: visible;
-            opacity: 1;
-            transform: translateY(-1em);
-        }
-        .title {
-            z-index: 1000;
-        }
-        // .title {
-        //     visibility: hidden;
-        //     opacity: 0;
-        //     transition: .5s;
-        //     transform: translateY(0);
-        //     z-index: 2;
-        // }
-        // .img__wrap:hover .title {
-        //     visibility: visible;
-        //     opacity: 1;
-        //     transform: translateY(1em);
-        // }
-        svg {
-            margin: 10px;
-            fill: $primary-color;
-        }
+        /*-- //Team --*/
     }
     #contact-section {
         h3 {

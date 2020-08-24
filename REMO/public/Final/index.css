@@ -237,25 +237,27 @@ body #home-section #schedule-btn {
 }
 
 body #about-section .icons {
-  font-size: 20vh;
+  font-size: 5vh;
 }
 
-body #team-section :root {
-  --d: 700ms;
-  --e: cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-body #team-section h1 {
-  font-size: 2rem;
-}
-
-body #team-section h2 {
-  font-family: Gilroy-light, Arial, sans-serif;
-  margin: 1rem;
-}
-
-body #team-section p {
+body #about-section p {
   font-size: 1rem;
+}
+
+body #about-section h3 {
+  font-size: 1.5rem;
+}
+
+body #about-section .feat {
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
+}
+
+body #team-section {
+  /*-- Team --*/
+  /* Stacks creted by the use of generated content */
+  /* 2nd element in stack (behind image) */
+  /*-- //Team --*/
 }
 
 body #team-section * {
@@ -263,134 +265,178 @@ body #team-section * {
           box-sizing: border-box;
 }
 
-body #team-section .hidden {
-  opacity: 0;
+body #team-section body {
+  font-size: 100%;
+  line-height: 1.42857143;
 }
 
-body #team-section .console-container {
-  font-size: 3vw;
-  text-align: center;
-  display: block;
-  color: white;
+body #team-section .team {
+  padding: 0;
 }
 
-@media screen and (max-width: 600px) {
-  body #team-section .console-container {
-    font-size: 2.7em;
+body #team-section .container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 768px) {
+  body #team-section .container {
+    width: 750px;
   }
 }
 
-body #team-section .console-underscore {
-  display: inline-block;
-  position: relative;
-  top: -0.14em;
-  left: 10px;
+@media (min-width: 992px) {
+  body #team-section .container {
+    width: 970px;
+  }
 }
 
-body #team-section .card-img {
+@media (min-width: 1200px) {
+  body #team-section .container {
+    width: 1170px;
+  }
+}
+
+body #team-section .team-grid {
+  text-align: center;
+}
+
+body #team-section .col-xs-4 {
+  width: 33.33333333%;
+  float: left;
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+body #team-section .team {
+  padding-top: 1em;
+}
+
+body #team-section .team-grid {
+  text-align: center;
+}
+
+body #team-section .team-grid h4 {
+  font-size: 25px;
+  font-weight: 600;
+  margin: 40px 0 20px;
+}
+
+body #team-section .team-grid p {
+  color: #777;
+  font-size: 1em;
+}
+
+body #team-section h4 {
+  text-align: center;
+}
+
+body #team-section .social-nav li {
+  display: inline-block;
+}
+
+body #team-section .social-nav a {
+  position: absolute;
+  left: -30%;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  margin: 0 10px;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+  line-height: 40px;
+  background: #000;
+  position: relative;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+body #team-section .model-3d-0 a {
+  background: #5C5B5B;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+body #team-section .model-3d-0 .front,
+body #team-section .model-3d-0 .back {
+  width: 40px;
+  height: 40px;
+  font-size: 1em;
+  color: #fff;
+  background: #111b57;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  -webkit-transform: translateZ(18px);
+  transform: translateZ(18px);
+  -webkit-backface-visibility: visible;
+  backface-visibility: visible;
+}
+
+body #team-section .model-3d-0 .back {
+  font-size: 1em;
+  color: #fff;
+  -webkit-transform: rotateX(90deg) translateZ(18px);
+  transform: rotateX(90deg) translateZ(18px);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+body #team-section .twitter .back,
+body #team-section .facebook .back,
+body #team-section .instagram .back,
+body #team-section .pinterest .back {
+  background: #81cdfa;
+}
+
+body #team-section .model-3d-0 a:hover {
+  -webkit-transform: rotateX(-90deg);
+  transform: rotateX(-90deg);
+}
+
+body #team-section .model-3d-0 a:hover .back {
+  -webkit-backface-visibility: visible;
+  backface-visibility: visible;
+}
+
+body #team-section .stack img {
+  height: 47vh;
   width: 100%;
-  height: 70vh;
   -o-object-fit: cover;
      object-fit: cover;
+  vertical-align: bottom;
+  border: 3px solid #fff;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  -o-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  -ms-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
 }
 
-@media screen and (max-width: 600px) {
-  body #team-section .card-img {
-    width: 70vw;
-    height: 60vh;
-  }
-  body #team-section .card {
-    border: none;
-    width: 75vw;
-  }
+body #team-section .stack:last-of-type {
+  margin-right: 0;
 }
 
-body #team-section .card {
-  border: none;
-}
-
-body #team-section .img__wrap {
+body #team-section .stack {
+  float: none;
+  width: 92%;
+  margin: 3% 0% 8% 4%;
   position: relative;
-}
-
-body #team-section .content {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.6);
-  color: #fff;
-  visibility: hidden;
-  opacity: 0;
-  -webkit-transition: opacity .5s, visibility .5s;
-  transition: opacity .5s, visibility .5s;
   z-index: 1;
-}
-
-body #team-section .c {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  color: #fff;
-}
-
-body #team-section .img__wrap:hover .content {
-  visibility: visible;
-  opacity: 1;
-}
-
-body #team-section .copy {
-  visibility: visible;
-  opacity: 1;
-  -webkit-transition: .5s;
-  transition: .5s;
-  -webkit-transform: translateY(1em);
-          transform: translateY(1em);
-}
-
-body #team-section .img__wrap:hover .copy {
-  visibility: hidden;
-  opacity: 0;
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
-}
-
-body #team-section .copy {
-  position: absolute;
-  bottom: 0;
-}
-
-body #team-section .profile {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  visibility: hidden;
-  opacity: 0;
-  -webkit-transition: .5s;
-  transition: .5s;
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
-  z-index: 2;
-}
-
-body #team-section .img__wrap:hover .profile {
-  visibility: visible;
-  opacity: 1;
-  -webkit-transform: translateY(-1em);
-          transform: translateY(-1em);
-}
-
-body #team-section .title {
-  z-index: 1000;
-}
-
-body #team-section svg {
-  margin: 10px;
-  fill: white;
 }
 
 body #contact-section h3 {

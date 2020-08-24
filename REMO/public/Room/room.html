@@ -35,9 +35,9 @@
         <a href="#" onclick="openvideo()" data-toggle="tooltip" data-placement="right" title="Dashboard"><i class="fas fa-desktop fa-lg"></i></a>
         <a href="#" onclick="openboard()" data-toggle="tooltip" data-placement="right" title="White Board"><i class="fas fa-file-signature fa-lg"></i></a>
         <a href="#" onclick="opengit()" data-toggle="tooltip" data-placement="right" title="GitHub"><i class="fab fa-github fa-2x"></i></a>
-        <a href="#" onclick="openlab()" data-toggle="tooltip" data-placement="right" title="Codelab"><i class="fas fa-laptop-code fa-lg"></i></a>
+        <a href="#" onclick="openlab()" data-toggle="tooltip" data-placement="right" title="Virtual Environment"><i class="fas fa-laptop-code fa-lg"></i></a>
         <a href="#" onclick="openchat()" data-toggle="tooltip" data-placement="right" title="Chat"><i class="fas fa-comment fa-lg"></i></a>
-        <a href="#" onclick="opensettings()" data-toggle="tooltip" data-placement="right" title="Settings"><i class="fas fa-sliders-h fa-lg"></i></a>
+        <a href="#" onclick="opensettings()" data-toggle="tooltip" data-placement="right" title="Toggle Controls"><i class="fas fa-sliders-h fa-lg"></i></a>
     </div>
     <!--sidebar end-->
 
@@ -57,7 +57,7 @@
             <div class="col-md-12 d-none" id="gitDIV" style="height: 100vh;padding: 20px;">
                 <div id="form" class="text-center my-auto search-form mx-auto" style="width: 30%;">
                     <input type="text" id="username" placeholder="GitHub username" class="search-field">
-                    <input type="submit" value="&#xf002" class="search-submit" id="btnUser"/>
+                    <input type="submit" value="&#xf002" class="search-submit" id="btnUser" />
                 </div>
                 <div class="container-fluid" style="padding: 20px;">
                     <div class="row">
@@ -71,7 +71,7 @@
                             <div style="overflow-y: scroll;overflow-x: hidden; height:74vh;">
                                 <div id="reposBox">
                                     <p id="divResultPath"></p>
-                                    <div id="divResult"></div>
+                                    <div id="divRes"></div>
                                 </div>
                                 <div id="activityBox" class="d-none">
                                     <div id="activityRes"></div>
@@ -83,16 +83,16 @@
             </div>
             <div class="col-md-12 d-none" id="boardDIV" style="max-height: 100vh;">
                 <div class="container-fluid" style="height: 100vh;">
-                    <embed src="https://removirtual-board.herokuapp.com/" id="board" style="width:100%; height:100vh;"/>
-                        <!--<iframe scrolling="no" style="border: none;" id="board" width="100%" height="100%" src="https://removirtual-board.herokuapp.com/"></iframe>-->
+                    <embed src="https://removirtual-board.herokuapp.com/" id="board" style="width:100%; height:100vh;" />
+                    <!--<iframe scrolling="no" style="border: none;" id="board" width="100%" height="100%" src="https://removirtual-board.herokuapp.com/"></iframe>-->
                 </div>
             </div>
             <div class="col-md-12 d-none" id="chatDIV" style="max-height: 100vh;">
                 <div class="container-fluid" style="height: 100vh;">
-                    <embed src="https://chat-at-remo.herokuapp.com/" id="chat" style="width:100%; height:100vh;"/>
+                    <embed src="https://chat-at-remo.herokuapp.com/" id="chat" style="width:100%; height:100vh;" />
                 </div>
             </div>
-            <div class="col-md-12 d-none" id="labDIV" style="height: 100%;">
+            <div class="col-md-12 d-none" id="labDIV" style="height: 99vh;">
                 <iframe contenteditable="true" allow-same-origin style="border: none;" id="lab" width="100%" height="100%"></iframe>
             </div>
         </div>

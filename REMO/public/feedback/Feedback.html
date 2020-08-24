@@ -17,6 +17,16 @@
     <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase.js"></script>
 </head>
 <style>
+    @font-face {
+        font-family: "Gilroy";
+        src: url("../Final/Gilroy-ExtraBold.otf") format("opentype");
+    }
+    
+    @font-face {
+        font-family: "Gilroy-light";
+        src: url("../Final/Gilroy-Light.otf") format("opentype");
+    }
+    
     input[type=text],
     select,
     textarea {
@@ -56,6 +66,7 @@
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
         box-sizing: border-box;
+        /* font-family: Gilroy, Arial, sans-serif !important; */
     }
     
     *:before,
@@ -144,23 +155,39 @@
     }
     
     .button {
-        background-color: #DCDCDC;
-        border: 2px solid #020353;
-        color: black;
-        padding: 0.5em 0.5em;
+        background-color: #760dff;
+        /* border: 2px solid #020353; */
+        color: #ffffff;
+        /* padding: 0.5em 0.5em; */
         text-align: center;
-        text-decoration: none;
-        font-size: 1em;
+        border: none;
+        outline: none;
+        text-decoration: none !important;
         display: block;
-        width: 40%;
-        border-radius: 5px;
-        box-shadow: 3px 3px 8px 0 #000;
+        width: 30%;
+        border-radius: 5%;
+        text-transform: uppercase;
+        /* border-radius: 5px; */
+        /* box-shadow: 3px 3px 8px 0 #000; */
         margin: auto;
+        
+        font-family: Gilroy, Arial, sans-serif !important;
+        width: 10rem;
+        font-size: 0.75rem;
+        letter-spacing: 0.1rem;
+        font-weight: 700;
+        padding: 10px;
+        text-transform: uppercase;
+    }
+
+    h3{
+        font-family: Gilroy, Arial, sans-serif !important;
+        margin-bottom: 10vh;
+        margin-top: 15vh;
     }
     
     .button:hover {
         color: white;
-        background-color: gray;
     }
 </style>
 
@@ -170,13 +197,13 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-2 text-center">
-                    <img src="../assets/remotitle.png" width="150">
+                    <a href="../index.html"><img src="../assets/remotitle.png" width="150"></a>
                 </div>
             </div>
             <div class="col-md-10 text-center my-auto container">
                 <form onsubmit="sConsole(event)">
-                    <section class='rating-widget'>
-                        <h1 style="text-align: center; color: white;">Rate your experience</h1>
+                    <section class='rating-widget' style="margin-bottom: 10vh;">
+                        <h3 style="text-align: center; color: white;">Rate your experience</h3>
                         <div class='rating-stars text-center'>
                             <ul id='stars'>
                                 <li class='star' title='Needs improvement' data-value='1'>
@@ -197,20 +224,8 @@
                             </ul>
                         </div>
                     </section>
-                    <div class="container">
-                        <form>
-                            <div class="row">
-                                <label for="feed_back" id="comments"><h3>Any suggestions/comments<h3></label>
-
-                                <textarea id="subject" name="subject" rows="20" cols="10"></textarea>
-                            </div>
-                            <div>
-                                <br>
-                                <!--                <a href="../index.html"><button class="btn submit-btn" type="submit" id="contact-submit-btn">Submit and return to Home page</button></a>-->
-                                <a type="submit" class="button" href="../index.html">Submit & Return to Home page</a>
-                            </div>
-                        </form>
-                    </div>
+                    <a type="submit" class="button" href="../index.html">Submit</a>
+                </form>
             </div>
         </div>
         </div>

@@ -1,20 +1,20 @@
-const divResult = document.getElementById("divResult"); //this is the body
+var divResult = document.getElementById("divRes"); //this is the body
 const divResultUser = document.getElementById("divResultUser");
-const divResultPath = document.getElementById("divResultPath");//this is the breadcrumbs menu 
+const divResultPath = document.getElementById("divResultPath"); //this is the breadcrumbs menu 
 const reposBox = document.getElementById("reposBox");
 const activityBox = document.getElementById("activityBox");
 const reposBtn = document.getElementById("reposBtn");
 const activityBtn = document.getElementById("activityBtn");
 const activityRes = document.getElementById("activityRes");
 
-reposBtn.addEventListener("click", (e)=>{
+reposBtn.addEventListener("click", (e) => {
     reposBox.classList.remove("d-none");
     activityBox.classList.add("d-none");
     reposBtn.classList.toggle("underline");
     activityBtn.classList.toggle("underline");
 });
 
-activityBtn.addEventListener("click", (e)=>{
+activityBtn.addEventListener("click", (e) => {
     activityBox.classList.remove("d-none");
     reposBox.classList.add("d-none");
     reposBtn.classList.toggle("underline");
@@ -22,7 +22,7 @@ activityBtn.addEventListener("click", (e)=>{
 });
 
 const headers = {
-     //OAuth app key
+        "Authorization": `Basic ${btoa(`c30baaa9c2b46d273bf0:718c040702fb459cb0189fe31fc90177e4f53a15`)}` //OAuth app key
 } 
 var path = []; //breadcrumbs path
 

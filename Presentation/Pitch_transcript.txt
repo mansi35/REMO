@@ -1,0 +1,21 @@
+Supriya:
+Greetings everybody, 
+Intro: I  attended a technical interview over a video call during the lockdown period.  It was very confusing for me, I couldn’t organize my thoughts. I had to share my screen and open up multiple applications to show my projects and to code a question or explain what I wanted to say.My peers and I shared the same grievance despite residing in different parts of the country. 
+.Looking at the way things have turned out from the month of March, we realized that this is not just an issue for students like us, but a serious problem for those undergoing and conducting the online recruitment process. Even on a larger scale during online interviews the candidate is asked to often share their screen and give remote access thereby giving complete control of their desktop to a person they have never interacted with and are expected to code questions or explain concepts using a shared document. But what if the requirement is much more??
+
+
+Mansi : This is where REMO comes into the picture. REMO is an integrated platform to facilitate online interviews
+Let me tell you why and how  REMO is the solution.
+
+In addition to the Video-chat, and a real-time whiteboard, we propose to offer 
+-A domain-specific virtual environment hosted on the cloud for testing of any technical skills which is accessible by both the parties and the candidate doesn’t have to share the screen. Let’s take an example, for a graphic designer, an instance of photoshop can be set up, or consider another situation where a candidate has to be tested on a programming language or databases, the respective environment will be set up.
+
+-Sharing screen or providing remote access, as this is an invasion of privacy so our virtual environment is hosted on the cloud. Each user can control the environment simultaneously.
+
+-One of our motives is to bring online interviews as close to offline interviews, an important component is to invigilate or monitor the testing environment.  
+
+-Instead of narrating his/her works, the written proof is always better and more convincing. A glimpse of interviewee’s resume and works of the interviewee will be provided to the interviewer to gauge the level of expertise better,  
+
+Interviewers and interviewees can be connected from all around the world, thereby eliminating the physical presence of the interviewee at the location of the interview
+     
+-Most of the other platforms that we use aren’t built in India, our end-to-end product is made in India. We ensure data security..(discuss later)

@@ -5,11 +5,9 @@ An interface to improve video interview experience..
 
 REMO is an integrated interface to facilitate remote interviews for recruiters so that the interviewees can showcase their skills more effectively.
 
-Features offered by REMO
+**Checkout the live website [here](https://removirtual-fa3b3.web.app)**
 
-## A audio-video interface ##
-- Implemented using webRTC
-- Presently supports a peer-to-peer connection
+Features offered by REMO
 
 ### A audio-video interface ###
 - Implemented using webRTC
@@ -38,9 +36,7 @@ Features offered by REMO
 - Hosted on Google Cloud Platform
 
 
-**Checkout the live website [here](https://removirtual-fa3b3.web.app).**
-
 ## Contributors ##
-- [Mansi Sharma](https://github.com/Namyalg)
+- [Mansi Sharma](https://github.com/mansi35)
 - [Namya LG](https://github.com/Namyalg)
 - [KHS Supriya](https://github.com/khssupriya)
